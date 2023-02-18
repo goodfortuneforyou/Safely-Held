@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ["ipfs.io"],
+    loader: "akamai",
+    path: "",
+    unoptimized: true,
   },
 };
 
