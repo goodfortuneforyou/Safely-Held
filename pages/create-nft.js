@@ -36,6 +36,7 @@ const CreateNft = () => {
       ${isDragAccept && "border-file-accept"}
       ${isDragReject && "border-file-reject"}
       `,
+    // eslint-disable-next-line comma-dangle
     []
   );
   if (isLoadingNFT) {
@@ -96,24 +97,33 @@ const CreateNft = () => {
           inputType="input"
           title="Name "
           placeHolder="NFT Name"
-          handleClick={(e) =>
-            setFormInput({ ...formInput, name: e.target.value })
+          handleClick={
+            (e) =>
+              // eslint-disable-next-line implicit-arrow-linebreak
+              setFormInput({ ...formInput, name: e.target.value })
+            // eslint-disable-next-line react/jsx-curly-newline
           }
         />
         <Input
           inputType="textarea"
           title="Description "
           placeHolder="NFT description"
-          handleClick={(e) =>
-            setFormInput({ ...formInput, description: e.target.value })
+          handleClick={
+            (e) =>
+              // eslint-disable-next-line implicit-arrow-linebreak
+              setFormInput({ ...formInput, description: e.target.value })
+            // eslint-disable-next-line react/jsx-curly-newline
           }
         />
         <Input
           inputType="number"
           title="Price"
           placeHolder="NFT Price"
-          handleClick={(e) =>
-            setFormInput({ ...formInput, price: e.target.value })
+          handleClick={
+            (e) =>
+              // eslint-disable-next-line implicit-arrow-linebreak
+              setFormInput({ ...formInput, price: e.target.value })
+            // eslint-disable-next-line react/jsx-curly-newline
           }
         />
         <div className="mt-7 w-full flex justify-end">

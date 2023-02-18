@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { shortenAddress } from "utils/shortenAddress";
+import { shortenAddress } from "../utils/shortenAddress";
 import { Banner, CreatorCard, Loader, NFTCard, SearchBar } from "../components";
 import images from "../assets";
 import { NFTContext } from "../context/NFTContext";
-import { makeId } from "../utils/makeId";
+// import { makeId } from "../utils/makeId";
 import { getCreators } from "../utils/getTopCreators";
 
 const Home = () => {
@@ -79,8 +79,11 @@ const Home = () => {
   const topCreators = getCreators(nftsCopy);
 
   const onHandleSearch = (value) => {
-    const filteredNfts = nfts.filter(({ name }) =>
-      name.toLowerCase().includes(value.toLowerCase())
+    const filteredNfts = nfts.filter(
+      ({ name }) =>
+        // eslint-disable-next-line implicit-arrow-linebreak, comma-dangle
+        name.toLowerCase().includes(value.toLowerCase())
+      // eslint-disable-next-line function-paren-newline
     );
     if (filteredNfts.length) {
       setNfts(filteredNfts);
@@ -100,6 +103,7 @@ const Home = () => {
       <div className="w-full minmd:w-4/5">
         <Banner
           name={
+            // eslint-disable-next-line react/jsx-wrap-multilines
             <>
               Discover, collect, and sell <br /> extraordinary NFTs!
             </>
