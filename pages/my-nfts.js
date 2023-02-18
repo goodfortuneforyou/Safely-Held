@@ -51,8 +51,11 @@ const MyNFTs = () => {
   }
 
   const onHandleSearch = (value) => {
-    const filteredNfts = nfts.filter(({ name }) =>
-      name.toLowerCase().includes(value.toLowerCase())
+    const filteredNfts = nfts.filter(
+      ({ name }) =>
+        // eslint-disable-next-line comma-dangle, implicit-arrow-linebreak
+        name.toLowerCase().includes(value.toLowerCase())
+      // eslint-disable-next-line function-paren-newline
     );
     if (filteredNfts.length) {
       setNfts(filteredNfts);

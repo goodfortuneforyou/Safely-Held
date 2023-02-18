@@ -49,6 +49,7 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
 };
 const ButtonGroup = ({ setActive, router, setIsOpen }) => {
   const { connectWallet, currentAccount } = useContext(NFTContext);
+  // eslint-disable-next-line no-unused-vars
   const hasConnected = true;
   return currentAccount ? (
     <Button

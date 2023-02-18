@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import images from "../assets";
+// eslint-disable-next-line import/no-cycle
 import { Button } from ".";
 
 const FooterLinks = ({ heading, items }) => (
@@ -11,7 +12,7 @@ const FooterLinks = ({ heading, items }) => (
     {items.map((item, index) => (
       <p
         key={index}
-        className="font-poppins dark:text-white text-nft-black-1 font-semibold font-normal text-base cursor-pointer dark:hover:text-nft-gray-1 hover:text-nft-black-1 my-3"
+        className="font-poppins dark:text-white text-nft-black-1 font-semibold text-base cursor-pointer dark:hover:text-nft-gray-1 hover:text-nft-black-1 my-3"
       >
         {item}
       </p>

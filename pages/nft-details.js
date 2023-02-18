@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { shortenAddress } from "../utils/shortenAddress";
 import { NFTContext } from "../context/NFTContext";
-import { Loader, NFTCard, Button, Modal } from "../components";
+import { Loader, Button, Modal } from "../components";
 import images from "../assets";
 
 const PaymentBodyCmp = ({ nft, nftCurrency }) => (
@@ -53,6 +53,7 @@ const PaymentBodyCmp = ({ nft, nftCurrency }) => (
 );
 
 const NFTDetails = () => {
+  // eslint-disable-next-line operator-linebreak
   const { currentAccount, nftCurrency, buyNFT, isLoadingNFT } =
     useContext(NFTContext);
   const [isLoading, setIsLoading] = useState(true);
@@ -136,10 +137,14 @@ const NFTDetails = () => {
             <Button
               btnName="List on Marketplace"
               classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
-              handleClick={() =>
-                router.push(
-                  `/resell-nft?tokenId=${nft.tokenId}&tokenURI=${nft.tokenURI}`
-                )
+              handleClick={
+                () =>
+                  // eslint-disable-next-line implicit-arrow-linebreak
+                  router.push(
+                    // eslint-disable-next-line comma-dangle
+                    `/resell-nft?tokenId=${nft.tokenId}&tokenURI=${nft.tokenURI}`
+                  )
+                // eslint-disable-next-line react/jsx-curly-newline
               }
             />
           ) : (
@@ -178,6 +183,7 @@ const NFTDetails = () => {
         <Modal
           header="Buying NFT..."
           body={
+            // eslint-disable-next-line react/jsx-wrap-multilines
             <div className="flexCenter flex-col text-center">
               <div className="relative w-52 h-52">
                 <Loader />
